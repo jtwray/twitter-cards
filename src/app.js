@@ -1,6 +1,5 @@
-require('dotenv').config(); 
-import express from 'express';
-import Xray from 'x-ray';
+const express = require('express')
+const Xray = require('x-ray')
 
 let app = express(),
     port = process.env.PORT || 8081,
