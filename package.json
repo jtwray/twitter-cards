@@ -5,9 +5,9 @@
   "main": "lib/app.js",
   "scripts": {
     "start": "node lib/app.js",
-        "build": "babel --presets es2015 src -d lib",
+
     "server": "nodemon index.js",
-    "debug": "node debug lib/app.js"
+
   },
   "repository": {
     "type": "git",
