@@ -10,10 +10,10 @@ app.get('/', (req, res) => {
   res.send(`Hello World!`);
 });
 
-app.get('/:url(*)', (req, res) => {
-  const url = req.params.url;
-
-  if (req.headers['user-agent'].indexOf('Twitterbot') > -1) {
+app.get('/:url', (req, res) => {
+  const {url} = req.params;
+  
+    if (req.headers['user-agent'].indexOf('Twitterbot') > -1) {
     // when twitter calls, show them the card
     x(url, {
       title: 'title',
