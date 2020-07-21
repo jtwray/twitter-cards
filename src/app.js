@@ -1,5 +1,5 @@
-import express from 'express';
-import Xray from 'x-ray';
+const express = require('express')
+const Xray = require('x-ray')
 
 let app = express(),
     port = process.env.PORT || 8081,
@@ -9,10 +9,10 @@ app.get('/', (req, res) => {
   res.send(`Hello World!`);
 });
 
-app.get('/:url(*)', (req, res) => {
-  const url = req.params.url;
-
-  if (req.headers['user-agent'].indexOf('Twitterbot') > -1) {
+app.get('/:url', (req, res) => {
+  const {url} = req.params;
+  
+    if (req.headers['user-agent'].indexOf('Twitterbot') > -1) {
     // when twitter calls, show them the card
     x(url, {
       title: 'title',
